@@ -1,0 +1,215 @@
+
+/* AGROSELECTOR — shared brand variables */
+:root{
+  --brand:#4CAF50;
+  --brand-dark:#1B5E20;
+  --accent:#FFEB3B;
+  --ink:#14150F;
+  --muted:#5F6158;
+  --paper:#FAFAFA;
+  --line:#E0DED4;
+
+  --display:'Space Grotesk', sans-serif;
+  --body:'Inter', sans-serif;
+
+  --s1:8px; --s2:16px; --s3:24px;
+  --s4:40px; --s5:64px; --s6:96px;
+
+  --radius:6px;
+  --wrap:1080px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  line-height:1.6;
+}
+a{color:var(--brand);text-decoration:none}
+a:hover{color:var(--brand-dark)}
+img{max-width:100%;display:block}
+h1,h2,h3{
+  margin:0;
+  color:var(--brand-dark);
+  font-family:var(--display);
+  line-height:1.15;
+}
+h1{font-size:56px}
+h2{font-size:35px}
+h3{font-size:20px}
+p{margin:0 0 var(--s2)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s3)}
+
+.navbar{
+  color: #1B5E20;
+  position:sticky;top:0;z-index:10;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.navbar-inner{
+  max-width:var(--wrap);min-height:72px;margin:0 auto;padding:0 var(--s3);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+}
+.logo{
+  display:flex;align-items:center;gap:var(--s1);
+  color:var(--brand-dark);font-family:var(--display);font-size:1.5rem;font-weight:700;
+}
+.logo-image{width:140px;height:64px;object-fit:contain}
+.logo-mark{display:none}
+.nav-links{display:flex;align-items:center;gap:var(--s3)}
+.nav-links a{color:var(--ink);font-size:.95rem;font-weight:600}
+
+.page-intro{padding:var(--s5) 0 var(--s4)}
+.eyebrow{
+  margin-bottom:var(--s1);color:var(--brand);
+  font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+}
+.intro-copy{max-width:700px;margin-top:var(--s2);color:var(--muted);font-size:1.05rem}
+.region-line{margin-top:var(--s2);color:var(--ink);font-weight:700}
+
+.crop-index{
+  padding:var(--s3) 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.crop-index-inner{display:flex;flex-wrap:wrap;gap:var(--s1)}
+.crop-index a{
+  padding:var(--s1) var(--s2);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:rgb(255, 255, 255);
+  color:var(--brand-dark);
+  font-size:.85rem;font-weight:700;
+}
+.crop-index a:hover{border-color:var(--brand);background:var(--paper)}
+
+.crop{
+  scroll-margin-top:var(--s4);
+  padding:var(--s5) 0;
+  border-bottom:1px solid var(--line);
+}
+.crop-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:var(--s3);margin-bottom:var(--s3);
+}
+.crop-head p{margin-top:var(--s1);color:var(--muted)}
+.status{
+  display:inline-flex;align-items:center;gap:var(--s1);
+  color:var(--muted);font-size:.8rem;white-space:nowrap;
+}
+.dot{
+  width:8px;height:8px;background:var(--brand);border-radius:50%;
+}
+
+.decision-panel{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:white;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.metric{
+  min-height:120px;padding:var(--s3);
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--line);
+}
+.metric:last-child{border-right:0}
+.metric-label{color:var(--muted);font-size:.8rem;font-weight:700}
+.metric-value{
+  margin-top:var(--s1);color:var(--brand-dark);
+  font-family:var(--display);font-size:1.8rem;font-weight:700;
+}
+.metric-note{color:var(--muted);font-size:.75rem}
+.metric-return{background:var(--paper)}
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:var(--s4);
+  margin-top:var(--s4);
+}
+.detail-block{
+  background:rgb(255, 255, 255);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--s3);
+}
+.detail-block h3{margin-bottom:var(--s2)}
+.detail-block p:last-child{margin-bottom:0}
+.detail-block p{color:var(--muted)}
+.detail-block strong{color:var(--ink)}
+
+.data-list{margin:0;padding:0;list-style:none}
+.data-list li{
+  display:flex;justify-content:space-between;gap:var(--s3);
+  padding:var(--s2) 0;border-bottom:1px solid var(--line);
+}
+.data-list li:last-child{border-bottom:0}
+.data-list span{color:var(--muted);font-size:.9rem}
+.data-list strong{text-align:right;color:var(--ink)}
+
+.return-box{
+  margin-top:var(--s3);padding:var(--s3);
+  background:#F5F0DF;border-left:4px solid #AEEA00;
+  border-radius:var(--radius);
+}
+.return-label{
+  color:var(--muted);font-size:.8rem;font-weight:700;
+  text-transform:uppercase;
+}
+.return-value{
+  display:block;margin-top:var(--s1);
+  color:var(--brand-dark);font-family:var(--display);
+  font-size:1.8rem;font-weight:700;
+}
+
+.notice{
+  margin-top:var(--s3);padding:var(--s3);
+  background:#F4F1E8;border:1px solid var(--line);
+  border-radius:var(--radius);color:var(--muted);font-size:.85rem;
+}
+.notice strong{color:var(--ink)}
+
+.sources{
+  padding:var(--s5) 0;
+}
+.source-card{
+  max-width:760px;padding:var(--s3);
+  background:white;border:1px solid var(--line);border-radius:var(--radius);
+}
+.source-card p{color:var(--muted)}
+.source-card strong{color:var(--ink)}
+.source-card a{font-weight:700}
+
+.site-footer{
+  margin-top:var(--s4);padding:var(--s4) 0;
+  border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:var(--s3);
+}
+.footer-inner p{margin:0}
+
+@media(max-width:800px){
+  .nav-links{display:none}
+  .page-intro{padding:var(--s4) 0}
+  .decision-panel{grid-template-columns:1fr 1fr}
+  .metric:nth-child(2){border-right:0}
+  .metric:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .detail-grid{grid-template-columns:1fr}
+  .crop-head{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:480px){
+  .wrap{padding:0 var(--s2)}
+  .navbar-inner{padding:0 var(--s2)}
+  h1{font-size:40px}
+  h2{font-size:30px}
+  .decision-panel{grid-template-columns:1fr}
+  .metric{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .metric:last-child{border-bottom:0!important}
+  .metric-value{font-size:1.6rem}
+  .crop{padding:var(--s4) 0}
+  .data-list li{align-items:flex-start;flex-direction:column;gap:var(--s1)}
+  .data-list strong{text-align:left}
+  .footer-inner{align-items:flex-start;flex-direction:column}
+}

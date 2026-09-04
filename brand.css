@@ -1,0 +1,745 @@
+/*
+==========================================================
+ AGROSELECTOR — BRAND & UI SYSTEM
+ Purpose:
+ Help smallholder farmers compare crops using
+ local price, yield, input cost and potential return.
+
+ IMPORTANT:
+ The POD brand variables are preserved exactly.
+==========================================================
+*/
+
+/* ========================================================
+   1. BRAND
+======================================================== */
+
+:root {
+  /* POD BRAND SHEET — DO NOT EDIT */
+  --brand:      #4CAF50;
+  --brand-dark: #1B5E20;
+  --accent:     #FFEB3B;
+  --ink:        #14150F;
+  --muted:      #5F6158;
+  --paper:      #FAFAFA;
+  --line:       #E0DED4;
+
+  --display: 'Space Grotesk', sans-serif;
+  --body:    'Inter', sans-serif;
+
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 40px;
+  --s5: 64px;
+  --s6: 96px;
+
+  --radius: 6px;
+  --wrap: 1080px;
+}
+
+
+/* ========================================================
+   2. BASE
+======================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  margin: 0;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand-dark);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  color: var(--brand-dark);
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  margin: 0 0 var(--s2);
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--s3);
+}
+
+
+/* ========================================================
+   3. NAVIGATION
+======================================================== */
+
+.navbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  max-width: var(--wrap);
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 var(--s3);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+
+  color: var(--brand-dark);
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+
+  border: 2px solid var(--brand);
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--brand);
+  font-size: 1.2rem;
+}
+
+.logo span {
+  color: var(--brand);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.nav-links a {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--brand);
+}
+
+
+/* ========================================================
+   4. HERO
+======================================================== */
+
+.hero {
+  padding: var(--s6) 0 var(--s5);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: var(--s5);
+}
+
+.hero h1 {
+  max-width: 720px;
+}
+
+.hero h1 span {
+  color: var(--brand);
+}
+
+.hero-text {
+  max-width: 650px;
+  margin-top: var(--s3);
+
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-top: var(--s4);
+}
+
+
+/* ========================================================
+   5. BUTTONS
+======================================================== */
+
+.btn {
+  min-height: 46px;
+  padding: 0 var(--s3);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--brand-dark);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-secondary:hover {
+  background: var(--brand);
+  color: white;
+}
+
+
+/* ========================================================
+   6. DECISION INTRO
+======================================================== */
+
+.section {
+  padding: var(--s5) 0;
+}
+
+.section-header {
+  max-width: 680px;
+  margin-bottom: var(--s4);
+}
+
+.section-label {
+  margin-bottom: var(--s1);
+
+  color: var(--brand);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-description {
+  margin-top: var(--s2);
+  color: var(--muted);
+}
+
+
+/* ========================================================
+   7. FARMER LOCATION / FILTER BAR
+======================================================== */
+
+.filter-bar {
+  padding: var(--s3);
+
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--s2);
+
+  margin-bottom: var(--s4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.field select,
+.field input {
+  width: 100%;
+  min-height: 44px;
+
+  padding: 0 var(--s2);
+
+  background: var(--paper);
+  color: var(--ink);
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  outline: none;
+}
+
+.field select:focus,
+.field input:focus {
+  border-color: var(--brand);
+}
+
+
+/* ========================================================
+   8. CROP COMPARISON CARDS
+======================================================== */
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+}
+
+.crop-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  overflow: hidden;
+}
+
+.crop-card-header {
+  padding: var(--s3);
+
+  background: var(--brand);
+  color: white;
+}
+
+.crop-card-header h3 {
+  color: white;
+}
+
+.crop-card-body {
+  padding: var(--s3);
+}
+
+.crop-stat {
+  padding: var(--s2) 0;
+
+  border-bottom: 1px solid var(--line);
+
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s2);
+}
+
+.crop-stat:last-child {
+  border-bottom: 0;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  color: var(--ink);
+  font-weight: 800;
+  text-align: right;
+}
+
+
+/* ========================================================
+   9. PRICE DISPLAY
+======================================================== */
+
+.price {
+  color: var(--brand-dark);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.price-unit {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+
+/* ========================================================
+   10. POTENTIAL RETURN
+======================================================== */
+
+.return-box {
+  margin-top: var(--s2);
+  padding: var(--s3);
+
+  background: #F5F0DF;
+  border-left: 4px solid var(--accent);
+
+  border-radius: var(--radius);
+}
+
+.return-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.return-value {
+  margin-top: var(--s1);
+
+  color: var(--brand-dark);
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+
+/* ========================================================
+   11. BEST OPTION INDICATOR
+======================================================== */
+
+.recommended {
+  position: relative;
+  border: 2px solid var(--brand);
+}
+
+.recommended::before {
+  content: "Worth considering";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: var(--s1) var(--s2);
+
+  background: var(--accent);
+  color: var(--ink);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  border-bottom-left-radius: var(--radius);
+}
+
+
+/* ========================================================
+   12. COMPARISON TABLE
+======================================================== */
+
+.comparison-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--s2);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.comparison-table th {
+  background: var(--brand);
+  color: white;
+
+  font-size: 0.85rem;
+}
+
+.comparison-table td {
+  font-size: 0.9rem;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.comparison-table .highlight {
+  font-weight: 800;
+  color: var(--brand);
+}
+
+
+/* ========================================================
+   13. INFORMATION / TRUST CARD
+======================================================== */
+
+.info-card {
+  padding: var(--s3);
+
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.info-card h3 {
+  margin-bottom: var(--s2);
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.source {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.source strong {
+  color: var(--ink);
+}
+
+
+/* ========================================================
+   14. DATA STATUS
+======================================================== */
+
+.data-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.data-dot {
+  width: 8px;
+  height: 8px;
+
+  background: var(--brand);
+  border-radius: 50%;
+}
+
+
+/* ========================================================
+   15. DISCLAIMER
+======================================================== */
+
+.disclaimer {
+  padding: var(--s3);
+
+  background: #F4F1E8;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.disclaimer strong {
+  color: var(--ink);
+}
+
+
+/* ========================================================
+   16. CTA
+======================================================== */
+
+.cta {
+  padding: var(--s5) var(--s3);
+
+  background: var(--brand);
+  color: white;
+
+  border-radius: var(--radius);
+
+  text-align: center;
+}
+
+.cta h2 {
+  color: white;
+}
+
+.cta p {
+  max-width: 620px;
+  margin: var(--s2) auto var(--s3);
+
+  color: #E8EEE9;
+}
+
+
+/* ========================================================
+   17. FOOTER
+======================================================== */
+
+footer {
+  margin-top: var(--s5);
+  padding: var(--s4) 0;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+}
+
+
+/* ========================================================
+   18. MOBILE — LOW-END PHONE FIRST
+======================================================== */
+
+@media (max-width: 800px) {
+
+  .navbar-inner {
+    min-height: 64px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: var(--s5) 0 var(--s4);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .crop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: var(--s4) 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* ========================================================
+   19. SMALL PHONE
+======================================================== */
+
+@media (max-width: 480px) {
+
+  .wrap {
+    padding: 0 var(--s2);
+  }
+
+  .navbar-inner {
+    padding: 0 var(--s2);
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding-top: var(--s4);
+  }
+
+  .crop-card-body,
+  .crop-card-header {
+    padding: var(--s2);
+  }
+
+  .return-box {
+    padding: var(--s2);
+  }
+
+  .return-value {
+    font-size: 1.5rem;
+  }
+}

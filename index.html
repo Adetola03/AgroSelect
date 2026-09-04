@@ -3,360 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Agro Select</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+      :root {
+        --deep-green: #1B5E20;
+        --mid-green: #4CAF50;
+        --lime: #AEEA00;
+        --yellow: #FFEB3B;
+        --paper: #FAFAFA;
+        --ink: #14150F;
+        --muted: #5F6158;
+      }
 
-  <title>Get Started | AgroSelect</title>
-  <meta
-    name="description"
-    content="Tell AgroSelect about your farm and compare crops using local price, yield and cost information for North-West Nigeria."
-  >
+      * {
+        box-sizing: border-box;
+      }
 
-  <link rel="stylesheet" href="css/brand.css">
-  <link rel="stylesheet" href="css/get-started.css">
+    body {
+        font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+        background-color: var(--paper);
+        color: var(--ink);
+        line-height: 1.6;
+    }
+
+    /* Header Shell */
+    header {
+      background-color: var(--paper);
+      border-bottom: 1px solid #E0DED4;
+      padding: 12px 20px;
+     }
+     header h1 {
+      color: var(--deep-green);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+    nav a {
+      color: var(--deep-green);
+      font-size: 16px;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    nav a.active {
+      color: var(--mid-green);
+      font-weight: bold;
+      border-bottom: 2px solid var(--lime);
+    }
+
+    /* Content Area */
+    main {
+      padding: 20px;
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: #ffffff;
+        border-top: 4px solid var(--mid-green);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: var(--deep-green);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 35px;
+        line-height: 1.15;
+        margin: 0 0 20px;
+    }
+      label {
+        color: var(--deep-green);
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      input, textarea, button {
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+        border: 1px solid var(--mid-green);
+      border-radius: 4px;
+    }
+    button {
+        background-color: var(--mid-green);
+        color: var(--paper);
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+        background-color: var(--lime);
+        color: var(--deep-green);
+    }
+
+    /* Footer Shell */
+    footer {
+        background-color: var(--deep-green);
+        color: var(--paper);
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+        border-top: 3px solid var(--lime);
+    }
+    footer a {
+        color: var(--yellow);
+    }
+
+      .brand-mark {
+        display: block;
+        height: 64px;
+        margin-bottom: 8px;
+        object-fit: contain;
+        object-position: left center;
+        width: 140px;
+      }
+
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 40px;
+        }
+        h2 {
+          font-size: 30px;
+        }
+      }
+  </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-
-      <a href="index.html" class="brand-logo" aria-label="AgroSelect home">
-        <img
-    src="assets/Agroselect%20logo.jpeg"
-    alt="AgroSelect"
-    class="logo-image"
->
-      </a>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="problem.html">The Problem</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="get-started.html" class="active" aria-current="page">
-          Get Started
-        </a>
-      </nav>
-
-    </div>
+  <!-- Shared Header Shell -->
+  <header>
+      <img class="brand-mark" src="logo.png" alt="AgroSelect">
+    <h1>Agro Select</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="agroselector-crop-details.html">Crops</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
   </header>
 
-
-  <!-- MAIN -->
+  <!-- Contact Page Content -->
   <main>
-
-    <section class="get-started-section">
-
-      <div class="form-container">
-
-        <!-- PAGE INTRO -->
-        <div class="page-intro">
-
-          <p class="eyebrow">STEP 1 · TELL US ABOUT YOUR FARM</p>
-
-          <h1>Start with what you know about your farm.</h1>
-
-          <p class="intro-text">
-            These details help us compare the crops you are considering.
-            We only use what is needed for that comparison.
-          </p>
-
-        </div>
-
-
-        <!-- FORM -->
-        <form class="farm-form">
-
-          <!-- LOCATION -->
-          <div class="form-group">
-
-            <label for="location">
-              Location <span class="required">*</span>
-            </label>
-
-            <select
-              id="location"
-              name="location"
-              required
-              aria-describedby="location-help"
-            >
-              <option value="" selected disabled>
-                Select your state
-              </option>
-
-              <option value="jigawa">Jigawa</option>
-              <option value="kaduna">Kaduna</option>
-              <option value="kano">Kano</option>
-              <option value="katsina">Katsina</option>
-              <option value="kebbi">Kebbi</option>
-              <option value="sokoto">Sokoto</option>
-              <option value="zamfara">Zamfara</option>
-            </select>
-
-            <p class="field-help" id="location-help">
-              Your state helps keep the comparison inside North-West Nigeria.
-            </p>
-
-          </div>
-
-
-          <!-- FARM SIZE -->
-          <div class="form-group">
-
-            <label for="farm-size">
-              Farm size (hectares) <span class="required">*</span>
-            </label>
-
-            <input
-              type="number"
-              id="farm-size"
-              name="farm-size"
-              min="0"
-              step="0.01"
-              inputmode="decimal"
-              placeholder="e.g. 2"
-              required
-              aria-describedby="farm-size-help"
-            >
-
-            <p class="field-help" id="farm-size-help">
-              Roughly how much land will you use this season?
-            </p>
-
-          </div>
-
-
-          <!-- BUDGET -->
-          <div class="form-group">
-
-            <label for="budget">
-              Budget available (₦) <span class="required">*</span>
-            </label>
-
-            <div class="currency-input">
-              <span class="currency-symbol" aria-hidden="true">₦</span>
-
-              <input
-                type="number"
-                id="budget"
-                name="budget"
-                min="0"
-                step="1000"
-                inputmode="numeric"
-                placeholder="e.g. 500000"
-                required
-                aria-describedby="budget-help"
-              >
-            </div>
-
-            <p class="field-help" id="budget-help">
-              Tell us what you can spend on this farm before harvest,
-              not your household income.
-            </p>
-
-          </div>
-
-
-          <!-- CROPS -->
-          <fieldset class="form-group crop-group">
-
-            <legend>
-              Crops considering <span class="required">*</span>
-            </legend>
-
-            <p class="field-help">
-              Select every crop you are considering so you can compare them.
-            </p>
-
-            <div class="crop-options">
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="maize"
-                >
-                <span class="crop-chip">Maize</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="rice"
-                >
-                <span class="crop-chip">Rice</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="sorghum"
-                >
-                <span class="crop-chip">Sorghum</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="millet"
-                >
-                <span class="crop-chip">Millet</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="cowpea"
-                >
-                <span class="crop-chip">Cowpea</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="groundnut"
-                >
-                <span class="crop-chip">Groundnut</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="soybean"
-                >
-                <span class="crop-chip">Soybean</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="sesame"
-                >
-                <span class="crop-chip">Sesame (Benniseed)</span>
-              </label>
-
-            </div>
-
-          </fieldset>
-
-
-          <!-- EXPERIENCE -->
-          <fieldset class="form-group">
-
-            <legend>
-              Farming experience <span class="required">*</span>
-            </legend>
-
-            <p class="field-help">
-              This helps us understand how familiar you are with farming.
-            </p>
-
-            <div class="experience-options">
-
-              <label class="experience-option">
-                <input
-                  type="radio"
-                  name="experience"
-                  value="first-season"
-                >
-                <span>First season</span>
-              </label>
-
-              <label class="experience-option">
-                <input
-                  type="radio"
-                  name="experience"
-                  value="few-seasons"
-                >
-                <span>A few seasons</span>
-              </label>
-
-              <label class="experience-option">
-                <input
-                  type="radio"
-                  name="experience"
-                  value="experienced"
-                >
-                <span>Experienced</span>
-              </label>
-
-            </div>
-
-          </fieldset>
-
-
-          <!-- SOIL INFORMATION -->
-          <div class="form-group">
-
-            <label for="soil">
-              Soil information <span class="optional">(Optional)</span>
-            </label>
-
-            <textarea
-              id="soil"
-              name="soil"
-              rows="3"
-              placeholder="Tell us anything you know about your soil."
-              aria-describedby="soil-help"
-            ></textarea>
-
-            <p class="field-help" id="soil-help">
-              If you know your soil type or condition, tell us;
-              you can leave this blank.
-            </p>
-
-          </div>
-
-
-          <!-- CTA -->
-          <div class="form-action">
-
-            <button type="submit" class="primary-button">
-              Get My Farm Options
-            </button>
-
-            <p class="next-step">
-              You’ll see a comparison of your selected crops —
-              estimated cost, yield, market price and return for
-              North-West Nigeria — based on the July 2024 NAERLS data.
-            </p>
-
-          </div>
-
-        </form>
-
-      </div>
-
-    </section>
-
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
   </main>
 
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-        <span class="footer-wordmark">
-          <span>Agro</span>Select
-        </span>
-
-        <p>Choose Better. Farm Smarter.</p>
-      </div>
-
-      <p class="footer-location">
-        North-West Nigeria
-      </p>
-
-    </div>
-
+  <!-- Shared Footer Shell -->
+  <footer>
+    <p>Contact: <a href="mailto:support@agroselect.org">support@agroselect.org</a> | +234 800 000 1234</p>
+    <p>&copy; 2026 Agro Select</p>
   </footer>
 
 </body>
