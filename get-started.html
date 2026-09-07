@@ -2,328 +2,319 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C110D">
 
-  <title>Get Started | AgroSelect</title>
-  <meta
-    name="description"
-    content="Tell AgroSelect about your farm and compare crops using local price, yield and cost information for North-West Nigeria."
-  >
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <link rel="stylesheet" href="css/brand.css">
-  <link rel="stylesheet" href="css/get-started.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/agroselect.css">
+  <title>Compare my crops | AgroSelect</title>
+  <meta name="description" content="Tell AgroSelect your state, farm size, budget and the crops you are weighing, and get a ranked comparison built on published North-West Nigeria survey data.">
+  <link rel="canonical" href="https://agroselect.ng/get-started.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgroSelect">
+  <meta property="og:title" content="Compare my crops | AgroSelect">
+  <meta property="og:description" content="Answer five short questions and get a ranked crop comparison for your plot size and your budget.">
+  <meta property="og:url" content="https://agroselect.ng/get-started.html">
+  <meta property="og:image" content="https://agroselect.ng/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compare my crops | AgroSelect">
+  <meta name="twitter:description" content="Answer five short questions and get a ranked crop comparison for your plot size and your budget.">
+  <meta name="twitter:image" content="https://agroselect.ng/assets/og-image.jpg">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="header-inner">
-
-      <a href="index.html" class="brand-logo" aria-label="AgroSelect home">
-        <img
-          src="assets/Agroselect%20logo.jpg"
-          alt="AgroSelect"
-          class="logo-image"
-        >
+    <div class="wrap header-inner">
+      <a class="brand-logo" href="index.html" aria-label="AgroSelect — home">
+        <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+             width="99" height="30" alt="AgroSelect">
       </a>
 
-      <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu"><span></span></button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="problem.html">The Problem</a>
         <a href="how-it-works.html">How It Works</a>
-        <a href="get-started.html" class="active" aria-current="page">
-          Get Started
-        </a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="get-started.html" aria-current="page">Get started</a>
       </nav>
 
+      <a class="btn btn-primary btn-sm header-cta" href="get-started.html" aria-current="page">Get started</a>
     </div>
   </header>
 
+  <main id="main">
 
-  <!-- MAIN -->
-  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Compare my crops</span>
+        </nav>
+        <h1>Start with what you know about your farm.</h1>
+        <p>
+          Five short questions. They are only used to scale the published figures
+          to your plot and your budget — nothing is sent anywhere or stored on a server.
+        </p>
+      </div>
+    </section>
 
-    <section class="get-started-section">
+    <section class="section section-paper">
+      <div class="wrap-narrow">
 
-      <div class="form-container">
-
-        <!-- PAGE INTRO -->
-        <div class="page-intro">
-
-          <p class="eyebrow">STEP 1 · TELL US ABOUT YOUR FARM</p>
-
-          <h1>Start with what you know about your farm.</h1>
-
-          <p class="intro-text">
-            These details help us compare the crops you are considering.
-            We only use what is needed for that comparison.
-          </p>
-
+        <div class="error-summary" id="error-summary" role="alert">
+          <h2>Check these before you continue</h2>
+          <ul id="error-summary-list"></ul>
         </div>
 
+        <form class="form-card" id="farm-form" novalidate>
 
-        <!-- FORM -->
-<form class="farm-form" action="#" method="post">
-    <!-- LOCATION -->
-    <fieldset class="form-section">
-        <legend>1. Where is your farm?</legend>
+          <!-- 1. LOCATION -->
+          <fieldset class="fieldset">
+            <legend><span class="legend-num" aria-hidden="true">1</span> Where is your farm?</legend>
 
-        <label for="location">Location</label>
+            <div class="field">
+              <label for="location">State</label>
+              <select class="input" id="location" name="location" required aria-describedby="location-help">
+                <option value="" selected disabled>Select your state</option>
+                <option value="jigawa">Jigawa</option>
+                <option value="kaduna">Kaduna</option>
+                <option value="kano">Kano</option>
+                <option value="katsina">Katsina</option>
+                <option value="kebbi">Kebbi</option>
+                <option value="sokoto">Sokoto</option>
+                <option value="zamfara">Zamfara</option>
+              </select>
+              <p class="help" id="location-help">
+                AgroSelect only covers the seven North-West states, because that is the
+                region the survey figures are drawn from.
+              </p>
+              <p class="field-error">Choose the state your farm is in.</p>
+            </div>
+          </fieldset>
 
-        <select id="location" name="location" required>
-            <option value="" selected disabled>Select your state</option>
-            <option value="jigawa">Jigawa</option>
-            <option value="kaduna">Kaduna</option>
-            <option value="kano">Kano</option>
-            <option value="katsina">Katsina</option>
-            <option value="kebbi">Kebbi</option>
-            <option value="sokoto">Sokoto</option>
-            <option value="zamfara">Zamfara</option>
-        </select>
-    </fieldset>
+          <!-- 2. SIZE -->
+          <fieldset class="fieldset">
+            <legend><span class="legend-num" aria-hidden="true">2</span> How much land will you plant?</legend>
 
+            <div class="field">
+              <label for="farm-size">Farm size</label>
+              <div class="input-unit">
+                <input type="number" id="farm-size" name="farm-size"
+                       min="0.01" step="0.01" inputmode="decimal"
+                       placeholder="2" required aria-describedby="size-help">
+                <span class="affix affix-end">hectares</span>
+              </div>
+              <p class="help" id="size-help">
+                Roughly the area you will use this season. One hectare is about
+                two and a half acres, or a plot of 100&nbsp;m by 100&nbsp;m.
+              </p>
+              <p class="field-error">Enter your farm size in hectares — it must be more than zero.</p>
+            </div>
+          </fieldset>
 
-    <!-- FARM SIZE -->
-    <fieldset class="form-section">
-        <legend>2. How much land will you use?</legend>
+          <!-- 3. BUDGET -->
+          <fieldset class="fieldset">
+            <legend><span class="legend-num" aria-hidden="true">3</span> What can you spend?</legend>
 
-        <label for="farm-size">Farm size</label>
+            <div class="field">
+              <label for="budget">Budget available this season</label>
+              <div class="input-unit">
+                <span class="affix affix-start" aria-hidden="true">₦</span>
+                <input type="number" id="budget" name="budget"
+                       min="1" step="1000" inputmode="numeric"
+                       placeholder="500000" required aria-describedby="budget-help">
+              </div>
+              <p class="help" id="budget-help">
+                What you can put into this farm before harvest — seed, fertiliser,
+                chemicals and labour. Not your household income.
+              </p>
+              <p class="field-error">Enter the budget you have available for this season.</p>
+            </div>
+          </fieldset>
 
-        <div class="input-with-unit">
-            <input
-                type="number"
-                id="farm-size"
-                name="farm-size"
-                min="0"
-                step="0.1"
-                placeholder="e.g. 2"
-                required
-            >
-            <span>hectares</span>
+          <!-- 4. CROPS -->
+          <fieldset class="fieldset" id="crops-fieldset">
+            <legend><span class="legend-num" aria-hidden="true">4</span> Which crops are you weighing?</legend>
+
+            <p class="help mb-4">
+              Pick every crop you are seriously considering — the comparison is only
+              as useful as the options you put in it.
+            </p>
+
+            <div class="option-grid">
+              <label class="option">
+                <input type="checkbox" name="crops" value="maize" id="maize">
+                <span class="option-text"><strong>Maize</strong><small>Staple cereal</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="rice" id="rice">
+                <span class="option-text"><strong>Rice</strong><small>Needs water control</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="sorghum" id="sorghum">
+                <span class="option-text"><strong>Sorghum</strong><small>Drought-tolerant</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="millet" id="millet">
+                <span class="option-text"><strong>Millet</strong><small>Drought-tolerant</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="cowpea" id="cowpea">
+                <span class="option-text"><strong>Cowpea</strong><small>Legume, quick harvest</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="groundnut" id="groundnut">
+                <span class="option-text"><strong>Groundnut</strong><small>Legume, low cost</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="soybean" id="soybean">
+                <span class="option-text"><strong>Soybean</strong><small>No survey price</small></span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="crops" value="sesame" id="sesame">
+                <span class="option-text"><strong>Sesame</strong><small>No survey price</small></span>
+              </label>
+            </div>
+
+            <p class="help" id="crop-count" aria-live="polite">None selected yet</p>
+            <p class="field-error">Select at least one crop to compare.</p>
+          </fieldset>
+
+          <!-- 5. EXPERIENCE -->
+          <fieldset class="fieldset" id="experience-fieldset">
+            <legend><span class="legend-num" aria-hidden="true">5</span> How much farming experience do you have?</legend>
+
+            <div class="option-stack">
+              <label class="option">
+                <input type="radio" name="experience" value="first-season" id="exp-first">
+                <span class="option-text"><strong>First season</strong><small>This is my first time farming this land</small></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="experience" value="few-seasons" id="exp-few">
+                <span class="option-text"><strong>A few seasons</strong><small>I have farmed before but I am still learning</small></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="experience" value="experienced" id="exp-exp">
+                <span class="option-text"><strong>Experienced</strong><small>I have farmed for many seasons</small></span>
+              </label>
+            </div>
+
+            <p class="help">
+              This does not change the figures. It only changes which cautions we
+              put in front of you.
+            </p>
+            <p class="field-error">Tell us how much farming experience you have.</p>
+          </fieldset>
+
+          <!-- 6. SOIL (optional) -->
+          <fieldset class="fieldset">
+            <legend><span class="legend-num" aria-hidden="true">6</span> Anything you know about your soil?</legend>
+
+            <div class="field">
+              <label for="soil">Soil notes <span class="optional">(optional)</span></label>
+              <textarea class="input" id="soil" name="soil" rows="4"
+                        placeholder="For example: sandy, clay, low-lying and holds water, or nothing at all."
+                        aria-describedby="soil-help"></textarea>
+              <p class="help" id="soil-help">
+                Carried through to your results so it sits beside the figures when you
+                decide. Leave it blank if you are not sure.
+              </p>
+            </div>
+          </fieldset>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              See my crop comparison
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="help">
+              You will see estimated cost, expected harvest, revenue and indicative
+              return for each crop you picked — scaled to your plot — from the NAERLS
+              2024 wet-season survey with July 2024 North-West prices.
+            </p>
+          </div>
+
+        </form>
+
+        <div class="notice notice-plain mt-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <div>
+            Your answers stay in this browser tab so you can go back and change them.
+            They are not sent to a server and they are cleared when you close the tab.
+          </div>
         </div>
-
-        <p class="field-help">
-            Roughly how much land will you use this season?
-        </p>
-    </fieldset>
-
-
-    <!-- BUDGET -->
-    <fieldset class="form-section">
-        <legend>3. What can you spend?</legend>
-
-        <label for="budget">Budget available</label>
-
-        <div class="input-with-unit">
-            <span>₦</span>
-            <input
-                type="number"
-                id="budget"
-                name="budget"
-                min="0"
-                step="1000"
-                placeholder="e.g. 500000"
-                required
-            >
-        </div>
-
-        <p class="field-help">
-            What you can spend on this farming season before harvest,
-            not your household income.
-        </p>
-    </fieldset>
-
-
-    <!-- CROPS -->
-    <fieldset class="form-section">
-        <legend>4. Which crops are you considering?</legend>
-
-        <p class="field-help">
-            Select one or more crops.
-        </p>
-
-        <div class="crop-options">
-
-            <label class="crop-option">
-                <input
-    type="checkbox"
-    name="crops"
-    value="maize"
->
-                <span>Maize</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="rice"
-                >
-                <span>Rice</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="sorghum"
-                >
-                <span>Sorghum</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="millet"
-                >
-                <span>Millet</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="cowpea"
-                >
-                <span>Cowpea</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="groundnut"
-                >
-                <span>Groundnut</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="soybean"
-                >
-                <span>Soybean</span>
-            </label>
-
-            <label class="crop-option">
-                <input
-                    type="checkbox"
-                    name="crops"
-                    value="sesame"
-                >
-                <span>Sesame (Benniseed)</span>
-            </label>
-
-        </div>
-    </fieldset>
-
-
-    <!-- EXPERIENCE -->
-    <fieldset class="form-section">
-        <legend>5. How much farming experience do you have?</legend>
-
-        <div class="experience-options">
-
-            <label class="radio-option">
-                <input
-                    type="radio"
-                    name="experience"
-                    value="first-season"
-                    required
-                >
-                <span>First season</span>
-            </label>
-
-            <label class="radio-option">
-                <input
-                    type="radio"
-                    name="experience"
-                    value="few-seasons"
-                >
-                <span>A few seasons</span>
-            </label>
-
-            <label class="radio-option">
-                <input
-                    type="radio"
-                    name="experience"
-                    value="experienced"
-                >
-                <span>Experienced</span>
-            </label>
-
-        </div>
-    </fieldset>
-
-
-    <!-- SOIL -->
-    <fieldset class="form-section">
-        <legend>6. Anything you know about your soil?</legend>
-
-        <label for="soil-info">
-            Soil information
-            <span class="optional">(Optional)</span>
-        </label>
-
-        <textarea
-            id="soil-info"
-            name="soil-info"
-            rows="4"
-            placeholder="For example: sandy soil, clay soil, or anything you know about the soil."
-        ></textarea>
-
-        <p class="field-help">
-            If you know it, tell us what you know about your soil.
-        </p>
-    </fieldset>
-
-
-    <!-- SUBMIT -->
-    <div class="form-submit">
-
-        <button type="submit" class="primary-button">
-            See My Crop Options
-        </button>
-
-        <p class="next-step">
-            You’ll see a comparison of your selected crops —
-            estimated cost, yield, market price and return for
-            North-West Nigeria — based on the July 2024 NAERLS data.
-        </p>
-
-    </div>
-
-</form>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <!-- FOOTER -->
-     <!-- YOUR FORM ENDS ABOVE HERE -->
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-
-            <div class="footer-brand">
-                <div class="footer-wordmark">
-                    AgroSelect
-                </div>
-
-                <p>Choose Better. Farm Smarter.</p>
-            </div>
-
-            <p class="footer-location">North-West Nigeria</p>
-
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+               width="99" height="30" alt="AgroSelect">
+          <p>Choose better. Farm smarter. Crop comparison for smallholder farmers
+             in North-West Nigeria, built on published survey data.</p>
         </div>
-    </footer>
 
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="get-started.html">Compare my crops</a></li>
+            <li><a href="crops.html">Crop figures</a></li>
+            <li><a href="how-it-works.html">How it works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="problem.html">The problem</a></li>
+            <li><a href="crops.html#sources">Data &amp; sources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Region</h3>
+          <ul>
+            <li>Jigawa &middot; Kaduna</li>
+            <li>Kano &middot; Katsina</li>
+            <li>Kebbi &middot; Sokoto</li>
+            <li>Zamfara</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AgroSelect. Figures are indicative estimates for
+           planning and comparison, not a guarantee of farm returns.</p>
+        <p>North-West Nigeria</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/crops.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
-

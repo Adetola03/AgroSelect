@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C110D">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/agroselect.css">
+  <title>Contact | AgroSelect</title>
+  <meta name="description" content="Questions about the figures, a correction to report, or an extension service that wants to use AgroSelect  get in touch.">
+  <link rel="canonical" href="https://agroselect.ng/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgroSelect">
+  <meta property="og:title" content="Contact | AgroSelect">
+  <meta property="og:description" content="Questions, corrections, or partnership enquiries for AgroSelect.">
+  <meta property="og:url" content="https://agroselect.ng/contact.html">
+  <meta property="og:image" content="https://agroselect.ng/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | AgroSelect">
+  <meta name="twitter:description" content="Questions, corrections, or partnership enquiries for AgroSelect.">
+  <meta name="twitter:image" content="https://agroselect.ng/assets/og-image.jpg">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand-logo" href="index.html" aria-label="AgroSelect  home">
+        <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+             width="99" height="30" alt="AgroSelect">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu"><span></span></button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="problem.html">The Problem</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="get-started.html">Get started</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm header-cta" href="get-started.html">Get started</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Contact</span>
+        </nav>
+        <h1>Tell us what we got wrong.</h1>
+        <p>
+          Corrections to the figures are the most useful thing you can send us. So are
+          the crops, states and questions we have not covered yet.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-paper">
+      <div class="wrap">
+        <div class="hero-grid align-start">
+
+          <!-- FORM -->
+          <div>
+            <form class="form-card" id="contact-form" novalidate>
+              <div class="field">
+                <label for="contact-name">Your name</label>
+                <input class="input" type="text" id="contact-name" name="name"
+                       autocomplete="name" required placeholder="Amina Bello">
+              </div>
+
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input class="input" type="email" id="contact-email" name="email"
+                       autocomplete="email" required placeholder="you@example.com"
+                       aria-describedby="email-help">
+                <p class="help" id="email-help">So we can reply. We will not add you to anything.</p>
+              </div>
+
+              <div class="field">
+                <label for="contact-subject">What is this about?</label>
+                <select class="input" id="contact-subject" name="subject" required>
+                  <option value="Question about the figures" selected>Question about the figures</option>
+                  <option value="Correction or error report">Correction or error report</option>
+                  <option value="Request a crop or state">Request a crop or state</option>
+                  <option value="Extension service or cooperative">Extension service or cooperative</option>
+                  <option value="Something else">Something else</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="contact-message">Message</label>
+                <textarea class="input" id="contact-message" name="message" rows="6" required
+                          placeholder="If you are reporting a correction, tell us which crop and which figure."></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">
+                  Send message
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+                <p class="help" id="contact-status" role="status" hidden></p>
+                <p class="help">
+                  AgroSelect has no back end yet, so this opens your email app with the
+                  message ready to send. You can also email
+                  <a href="mailto:agroselect25@gmail.com">agroselect25@gmail.com</a> directly.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- SIDEBAR -->
+          <div class="stack">
+            <div class="card">
+              <h3>Email</h3>
+              <p><a href="mailto:agroselect25@gmail.com">agroselect25@gmail.com</a></p>
+              <p class="help mt-3">
+                We read everything. Corrections with a source get answered first.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Where we work</h3>
+              <p>
+                North-West Nigeria  Jigawa, Kaduna, Kano, Katsina, Kebbi, Sokoto
+                and Zamfara.
+              </p>
+              <p class="help mt-3">
+                Other zones are not covered because the figures on this site are
+                North-West values. We would rather cover one region honestly than
+                several badly.
+              </p>
+            </div>
+
+            <div class="notice notice-plain">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+              <div>
+                Looking for the numbers rather than a conversation? The
+                <a href="crops.html">crops page</a> carries every figure and the
+                working behind it, and <a href="crops.html#sources">sources</a> links
+                to the original report.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section section-paper-2">
+      <div class="wrap-narrow">
+        <p class="eyebrow">Common questions</p>
+        <h2>Asked often enough to answer here.</h2>
+
+        <div class="stack mt-6">
+          <article class="card">
+            <h3>Why only these eight crops?</h3>
+            <p>
+              They are the crops the NAERLS North-West figures cover well enough to
+              compare fairly. Adding a crop without a reliable regional yield and cost
+              would put a number on the screen that we could not stand behind.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Why is soybean or sesame showing "Unavailable"?</h3>
+            <p>
+              Neither has a comparable North-West July 2024 market price in the survey.
+              Without a price there is no revenue and no return. Their yields and costs
+              are still shown, because those figures are reported.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Are these figures current?</h3>
+            <p>
+              They are from the 2024 wet-season survey, with July 2024 prices. That is
+              the most recent complete regional dataset we have. Prices in particular
+              will have moved since  treat the comparison between crops as more
+              reliable than any single figure.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Can my cooperative or extension service use this?</h3>
+            <p>
+              Yes, and please do. If it would be more useful with a printed handout, a
+              Hausa translation, or figures for a different zone, write to us and say
+              which  that is how we decide what to build next.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Do you store what I enter?</h3>
+            <p>
+              No. Your answers stay in your browser tab so you can go back and change
+              them, and they are gone when you close it. There is no account, no server
+              and no analytics on your farm details.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Or skip the questions and run the numbers.</h2>
+        <p>The comparison takes about a minute and needs no account.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="get-started.html">Compare my crops</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+               width="99" height="30" alt="AgroSelect">
+          <p>Choose better. Farm smarter. Crop comparison for smallholder farmers
+             in North-West Nigeria, built on published survey data.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="get-started.html">Compare my crops</a></li>
+            <li><a href="crops.html">Crop figures</a></li>
+            <li><a href="how-it-works.html">How it works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="problem.html">The problem</a></li>
+            <li><a href="crops.html#sources">Data &amp; sources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Region</h3>
+          <ul>
+            <li>Jigawa &middot; Kaduna</li>
+            <li>Kano &middot; Katsina</li>
+            <li>Kebbi &middot; Sokoto</li>
+            <li>Zamfara</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AgroSelect. Figures are indicative estimates for
+           planning and comparison, not a guarantee of farm returns.</p>
+        <p>North-West Nigeria</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/crops.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

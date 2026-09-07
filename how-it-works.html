@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C110D">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/agroselect.css">
+  <title>How it works | AgroSelect</title>
+  <meta name="description" content="The method behind AgroSelect: which figures come from the NAERLS 2024 survey, exactly how revenue and return are calculated, and what the comparison deliberately does not do.">
+  <link rel="canonical" href="https://agroselect.ng/how-it-works.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgroSelect">
+  <meta property="og:title" content="How it works | AgroSelect">
+  <meta property="og:description" content="The full method — the source data, the arithmetic, and the limits of what a crop comparison can tell you.">
+  <meta property="og:url" content="https://agroselect.ng/how-it-works.html">
+  <meta property="og:image" content="https://agroselect.ng/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How it works | AgroSelect">
+  <meta name="twitter:description" content="The full method — the source data, the arithmetic, and the limits of what a crop comparison can tell you.">
+  <meta name="twitter:image" content="https://agroselect.ng/assets/og-image.jpg">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand-logo" href="index.html" aria-label="AgroSelect — home">
+        <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+             width="99" height="30" alt="AgroSelect">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu"><span></span></button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="problem.html">The Problem</a>
+        <a href="how-it-works.html" aria-current="page">How It Works</a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="get-started.html">Get started</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm header-cta" href="get-started.html">Get started</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>How It Works</span>
+        </nav>
+        <h1>No black box. Here is the whole method.</h1>
+        <p>
+          You are being asked to weigh a year's income against these numbers. You are
+          entitled to see exactly where each one comes from and what was done to it.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= THE FOUR STEPS ================= -->
+    <section class="section section-paper">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The process</p>
+          <h2>Four steps, about a minute.</h2>
+        </div>
+
+        <div class="steps grid-2 grid">
+          <article class="step">
+            <h3>You describe your farm</h3>
+            <p>
+              State, area in hectares, and the budget you have before harvest. The
+              state keeps the comparison inside the region the data covers; the area
+              and budget are what everything else is scaled against.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>You pick the crops in play</h3>
+            <p>
+              Any of the eight crops the survey covers. Two is enough for a
+              comparison; all eight works just as well. The tool never adds a crop you
+              did not choose or drop one you did.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>We scale the published figures</h3>
+            <p>
+              Each crop's per-hectare cost, revenue and return — as published — is
+              multiplied by your area. Nothing is re-derived, so the site always agrees
+              with the source report.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>We rank and check against your budget</h3>
+            <p>
+              Crops are ordered by total indicative return, then each is checked
+              against what you can spend. Anything you cannot afford is flagged, with
+              the area your budget would actually cover.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE MATHS ================= -->
+    <section class="section section-dark">
+      <div class="wrap-narrow">
+        <p class="eyebrow">The arithmetic</p>
+        <h2>Every calculation on this site, in full.</h2>
+        <p class="lede mt-5">
+          There are only four. None of them is clever, and that is deliberate — you
+          should be able to check any figure on this site with a calculator.
+        </p>
+
+        <div class="stack mt-6 formula-list">
+          <div class="formula-card">
+            <h3>1. Expected harvest</h3>
+            <p class="formula">
+              yield in MT/ha &times; 1,000 &times; your hectares = <strong>kilograms</strong>
+            </p>
+            <p>
+              Example: maize at 2.50 MT/ha on 2 ha &rarr; 2.50 &times; 1,000 &times; 2 =
+              <strong>5,000 kg</strong>.
+            </p>
+          </div>
+
+          <div class="formula-card">
+            <h3>2. Indicative revenue</h3>
+            <p class="formula">
+              published revenue per hectare &times; your hectares = <strong>revenue</strong>
+            </p>
+            <p>
+              The per-hectare revenue is itself the survey's yield multiplied by the
+              survey's July 2024 North-West price. Where there is no comparable price,
+              there is no revenue, and the site says <strong>Unavailable</strong>.
+            </p>
+          </div>
+
+          <div class="formula-card">
+            <h3>3. Indicative return</h3>
+            <p class="formula">
+              revenue &minus; production cost = <strong>return</strong>
+            </p>
+            <p>
+              This is the figure crops are ranked by. It is what is left after the
+              production bill — not profit, because it does not carry your land, your
+              transport, your storage losses or your loan interest.
+            </p>
+          </div>
+
+          <div class="formula-card">
+            <h3>4. Return per ₦1 spent</h3>
+            <p class="formula">
+              return &divide; production cost = <strong>return per naira</strong>
+            </p>
+            <p>
+              Included because the biggest total return is often the one you cannot
+              afford. This shows which crop works a limited budget hardest, which is a
+              different question — and frequently a more useful one.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE DATA ================= -->
+    <section class="section section-paper">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The inputs</p>
+          <h2>Which numbers are the survey's, and which are ours.</h2>
+          <p>
+            Everything that drives a ranking comes from the survey. The only things we
+            add are plain-language notes, and they never move a figure.
+          </p>
+        </div>
+
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">
+              Each figure used by AgroSelect, its source, and whether it affects the ranking.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Where it comes from</th>
+                <th scope="col">Affects the ranking?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Market price per kg</td>
+                <td>NAERLS 2024 survey, North-West, July 2024</td>
+                <td><span class="badge badge-green">Yes</span></td>
+              </tr>
+              <tr>
+                <td>Expected yield (MT/ha)</td>
+                <td>NAERLS 2024 survey, North-West</td>
+                <td><span class="badge badge-green">Yes</span></td>
+              </tr>
+              <tr>
+                <td>Production cost per ha</td>
+                <td>NAERLS 2024 survey, North-West</td>
+                <td><span class="badge badge-green">Yes</span></td>
+              </tr>
+              <tr>
+                <td>Indicative revenue &amp; return</td>
+                <td>Derived from the three figures above</td>
+                <td><span class="badge badge-green">Yes</span></td>
+              </tr>
+              <tr>
+                <td>Planting and harvest windows</td>
+                <td>NAERLS 2024 survey</td>
+                <td><span class="badge badge-neutral">No</span></td>
+              </tr>
+              <tr>
+                <td>Major risks per crop</td>
+                <td>NAERLS 2024 survey</td>
+                <td><span class="badge badge-neutral">No</span></td>
+              </tr>
+              <tr>
+                <td>Water needs, plain-language notes</td>
+                <td>General agronomic guidance, written by us</td>
+                <td><span class="badge badge-neutral">No</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="table-caption">
+          Full source details and the report link are on the
+          <a href="crops.html#sources">crops page</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= LIMITS ================= -->
+    <section class="section section-paper-2">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Limits</p>
+          <h2>What this comparison cannot do.</h2>
+          <p>
+            A tool that hides its limits is worse than no tool. These are the ones that
+            matter most.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>It cannot see your land</h3>
+            <p>
+              Soil, slope, drainage and how the plot has been farmed before will move
+              your yield well away from a regional average. Your soil notes are carried
+              through to the results, but they change no figure.
+            </p>
+          </article>
+          <article class="card">
+            <h3>It cannot predict the market</h3>
+            <p>
+              Prices are from July 2024. By the time you harvest, they will have moved.
+              A crop can look strong here and sell poorly, and the reverse.
+            </p>
+          </article>
+          <article class="card">
+            <h3>It cannot price your risk</h3>
+            <p>
+              Rice shows the largest return in the dataset and also depends on water
+              control you may not have. The comparison ranks return, not the chance of
+              getting it.
+            </p>
+          </article>
+          <article class="card">
+            <h3>It uses regional averages</h3>
+            <p>
+              One set of figures covers all seven states. Conditions in Kebbi and
+              Kaduna are not identical, and the survey figures do not separate them.
+            </p>
+          </article>
+          <article class="card">
+            <h3>It has gaps, and says so</h3>
+            <p>
+              Soybean and sesame have no comparable North-West price in the survey, so
+              they cannot be ranked. They still appear, with their costs and yields.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Return is not profit</h3>
+            <p>
+              Land, transport, storage, post-harvest loss and loan interest are all
+              outside these figures. Your real margin will be lower than the return
+              shown.
+            </p>
+          </article>
+        </div>
+
+       
+      </div>
+    </section>
+
+    <!-- ================= PRIVACY ================= -->
+    <section class="section section-paper">
+      <div class="wrap-narrow prose">
+        <p class="eyebrow">Your data</p>
+        <h2>Nothing you type leaves your phone.</h2>
+        <p>
+          AgroSelect has no account, no login and no server that receives your answers.
+          The figures you enter are held in your browser tab so you can move between
+          the questions and the results, and they are cleared when you close it.
+        </p>
+        <p>
+          Nothing is sold, shared or used to build a profile of you. There is nothing
+          to delete, because there is nothing kept.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Now put your own farm through it.</h2>
+        <p>The method above, run against your state, your hectares and your budget.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="get-started.html">Compare my crops</a>
+          <a class="btn btn-ghost-light btn-lg" href="crops.html">See the crop data first</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+               width="99" height="30" alt="AgroSelect">
+          <p>Choose better. Farm smarter. Crop comparison for smallholder farmers
+             in North-West Nigeria, built on published survey data.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="get-started.html">Compare my crops</a></li>
+            <li><a href="crops.html">Crop figures</a></li>
+            <li><a href="how-it-works.html">How it works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="problem.html">The problem</a></li>
+            <li><a href="crops.html#sources">Data &amp; sources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Region</h3>
+          <ul>
+            <li>Jigawa &middot; Kaduna</li>
+            <li>Kano &middot; Katsina</li>
+            <li>Kebbi &middot; Sokoto</li>
+            <li>Zamfara</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AgroSelect. Figures are indicative estimates for
+           planning and comparison, not a guarantee of farm returns.</p>
+        <p>North-West Nigeria</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/crops.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

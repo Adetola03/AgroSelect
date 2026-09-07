@@ -2,362 +2,429 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C110D">
 
-  <title>Get Started | AgroSelect</title>
-  <meta
-    name="description"
-    content="Tell AgroSelect about your farm and compare crops using local price, yield and cost information for North-West Nigeria."
-  >
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <link rel="stylesheet" href="css/brand.css">
-  <link rel="stylesheet" href="css/get-started.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/agroselect.css">
+  <title>AgroSelect  Know which crop pays before you plant</title>
+  <meta name="description" content="Compare maize, rice, sorghum, millet, cowpea, groundnut, soybean and sesame using published North-West Nigeria price, yield and cost data. Free, and built for smallholder farmers.">
+  <link rel="canonical" href="https://agroselect.ng/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgroSelect">
+  <meta property="og:title" content="AgroSelect  Know which crop pays before you plant">
+  <meta property="og:description" content="Compare eight crops on real North-West Nigeria price, yield and cost data before you commit your land and your money.">
+  <meta property="og:url" content="https://agroselect.ng/index.html">
+  <meta property="og:image" content="https://agroselect.ng/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AgroSelect  Know which crop pays before you plant">
+  <meta name="twitter:description" content="Compare eight crops on real North-West Nigeria price, yield and cost data before you commit your land and your money.">
+  <meta name="twitter:image" content="https://agroselect.ng/assets/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AgroSelect",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "description": "Crop comparison for smallholder farmers in North-West Nigeria, using published NAERLS 2024 price, yield and production-cost data.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NGN" },
+    "areaServed": "North-West Nigeria"
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="header-inner">
-
-      <a href="index.html" class="brand-logo" aria-label="AgroSelect home">
-        <img
-    src="assets/Agroselect%20logo.jpeg"
-    alt="AgroSelect"
-    class="logo-image"
->
+    <div class="wrap header-inner">
+      <a class="brand-logo" href="index.html" aria-label="AgroSelect  home">
+        <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+             width="99" height="30" alt="AgroSelect">
       </a>
 
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu"><span></span></button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="problem.html">The Problem</a>
         <a href="how-it-works.html">How It Works</a>
-        <a href="get-started.html" class="active" aria-current="page">
-          Get Started
-        </a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="get-started.html">Get started</a>
       </nav>
 
+      <a class="btn btn-primary btn-sm header-cta" href="get-started.html">Get started</a>
     </div>
   </header>
 
+  <main id="main">
 
-  <!-- MAIN -->
-  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
 
-    <section class="get-started-section">
+          <div>
 
-      <div class="form-container">
+            <h1 class="mt-5">Know which crop <span class="accent">pays</span> before you plant.</h1>
 
-        <!-- PAGE INTRO -->
-        <div class="page-intro">
+            <p class="hero-lede">
+              Every season you commit land, money and months of work to a choice made
+              on rumour. AgroSelect puts the actual numbers side by side  price,
+              yield, cost and what is left over  so the choice is yours to make on evidence.
+            </p>
 
-          <p class="eyebrow">STEP 1 · TELL US ABOUT YOUR FARM</p>
+            <div class="btn-row">
+              <a class="btn btn-primary btn-lg" href="get-started.html">
+                Compare my crops
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost-light btn-lg" href="how-it-works.html">See how it works</a>
+            </div>
 
-          <h1>Start with what you know about your farm.</h1>
+            <p class="hero-note">
+              Free. No account, no airtime, works on a basic phone browser.
+            </p>
+          </div>
 
-          <p class="intro-text">
-            These details help us compare the crops you are considering.
-            We only use what is needed for that comparison.
-          </p>
+          <div class="preview-card" aria-hidden="true">
+            <div class="preview-head">
+              <h2>Your season on 2 hectares</h2>
+              <span>Indicative return</span>
+            </div>
+            <div id="hero-preview-rows">
+              <!-- Rendered by js/site.js from the same dataset the results page uses. -->
+              <div class="preview-row is-best">
+                <div class="preview-crop"><span class="preview-rank">1</span><span class="preview-name">Rice</span></div>
+                <span class="preview-value">₦4,873,138</span>
+                <span class="preview-bar"><i style="width:100%"></i></span>
+              </div>
+              <div class="preview-row">
+                <div class="preview-crop"><span class="preview-rank">2</span><span class="preview-name">Groundnut</span></div>
+                <span class="preview-value">₦2,537,332</span>
+                <span class="preview-bar"><i style="width:52%"></i></span>
+              </div>
+              <div class="preview-row">
+                <div class="preview-crop"><span class="preview-rank">3</span><span class="preview-name">Maize</span></div>
+                <span class="preview-value">₦2,314,036</span>
+                <span class="preview-bar"><i style="width:47%"></i></span>
+              </div>
+              <div class="preview-row">
+                <div class="preview-crop"><span class="preview-rank">4</span><span class="preview-name">Millet</span></div>
+                <span class="preview-value">₦1,030,662</span>
+                <span class="preview-bar"><i style="width:21%"></i></span>
+              </div>
+            </div>
+            <p class="preview-foot">
+              Worked example. Your own figures depend on your land, budget and the crops you pick.
+            </p>
+          </div>
 
         </div>
-
-
-        <!-- FORM -->
-        <form class="farm-form">
-
-          <!-- LOCATION -->
-          <div class="form-group">
-
-            <label for="location">
-              Location <span class="required">*</span>
-            </label>
-
-            <select
-              id="location"
-              name="location"
-              required
-              aria-describedby="location-help"
-            >
-              <option value="" selected disabled>
-                Select your state
-              </option>
-
-              <option value="jigawa">Jigawa</option>
-              <option value="kaduna">Kaduna</option>
-              <option value="kano">Kano</option>
-              <option value="katsina">Katsina</option>
-              <option value="kebbi">Kebbi</option>
-              <option value="sokoto">Sokoto</option>
-              <option value="zamfara">Zamfara</option>
-            </select>
-
-            <p class="field-help" id="location-help">
-              Your state helps keep the comparison inside North-West Nigeria.
-            </p>
-
-          </div>
-
-
-          <!-- FARM SIZE -->
-          <div class="form-group">
-
-            <label for="farm-size">
-              Farm size (hectares) <span class="required">*</span>
-            </label>
-
-            <input
-              type="number"
-              id="farm-size"
-              name="farm-size"
-              min="0"
-              step="0.01"
-              inputmode="decimal"
-              placeholder="e.g. 2"
-              required
-              aria-describedby="farm-size-help"
-            >
-
-            <p class="field-help" id="farm-size-help">
-              Roughly how much land will you use this season?
-            </p>
-
-          </div>
-
-
-          <!-- BUDGET -->
-          <div class="form-group">
-
-            <label for="budget">
-              Budget available (₦) <span class="required">*</span>
-            </label>
-
-            <div class="currency-input">
-              <span class="currency-symbol" aria-hidden="true">₦</span>
-
-              <input
-                type="number"
-                id="budget"
-                name="budget"
-                min="0"
-                step="1000"
-                inputmode="numeric"
-                placeholder="e.g. 500000"
-                required
-                aria-describedby="budget-help"
-              >
-            </div>
-
-            <p class="field-help" id="budget-help">
-              Tell us what you can spend on this farm before harvest,
-              not your household income.
-            </p>
-
-          </div>
-
-
-          <!-- CROPS -->
-          <fieldset class="form-group crop-group">
-
-            <legend>
-              Crops considering <span class="required">*</span>
-            </legend>
-
-            <p class="field-help">
-              Select every crop you are considering so you can compare them.
-            </p>
-
-            <div class="crop-options">
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="maize"
-                >
-                <span class="crop-chip">Maize</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="rice"
-                >
-                <span class="crop-chip">Rice</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="sorghum"
-                >
-                <span class="crop-chip">Sorghum</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="millet"
-                >
-                <span class="crop-chip">Millet</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="cowpea"
-                >
-                <span class="crop-chip">Cowpea</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="groundnut"
-                >
-                <span class="crop-chip">Groundnut</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="soybean"
-                >
-                <span class="crop-chip">Soybean</span>
-              </label>
-
-              <label class="crop-option">
-                <input
-                  type="checkbox"
-                  name="crops"
-                  value="sesame"
-                >
-                <span class="crop-chip">Sesame (Benniseed)</span>
-              </label>
-
-            </div>
-
-          </fieldset>
-
-
-          <!-- EXPERIENCE -->
-          <fieldset class="form-group">
-
-            <legend>
-              Farming experience <span class="required">*</span>
-            </legend>
-
-            <p class="field-help">
-              This helps us understand how familiar you are with farming.
-            </p>
-
-            <div class="experience-options">
-
-              <label class="experience-option">
-                <input
-                  type="radio"
-                  name="experience"
-                  value="first-season"
-                >
-                <span>First season</span>
-              </label>
-
-              <label class="experience-option">
-                <input
-                  type="radio"
-                  name="experience"
-                  value="few-seasons"
-                >
-                <span>A few seasons</span>
-              </label>
-
-              <label class="experience-option">
-                <input
-                  type="radio"
-                  name="experience"
-                  value="experienced"
-                >
-                <span>Experienced</span>
-              </label>
-
-            </div>
-
-          </fieldset>
-
-
-          <!-- SOIL INFORMATION -->
-          <div class="form-group">
-
-            <label for="soil">
-              Soil information <span class="optional">(Optional)</span>
-            </label>
-
-            <textarea
-              id="soil"
-              name="soil"
-              rows="3"
-              placeholder="Tell us anything you know about your soil."
-              aria-describedby="soil-help"
-            ></textarea>
-
-            <p class="field-help" id="soil-help">
-              If you know your soil type or condition, tell us;
-              you can leave this blank.
-            </p>
-
-          </div>
-
-
-          <!-- CTA -->
-          <div class="form-action">
-
-            <button type="submit" class="primary-button">
-              Get My Farm Options
-            </button>
-
-            <p class="next-step">
-              You’ll see a comparison of your selected crops —
-              estimated cost, yield, market price and return for
-              North-West Nigeria — based on the July 2024 NAERLS data.
-            </p>
-
-          </div>
-
-        </form>
-
       </div>
+    </section>
 
+    <!-- ================= STATS ================= -->
+    <section class="section-dark section-tight">
+      <div class="wrap">
+        <div class="stat-strip">
+          <div class="stat">
+            <span class="stat-value">8</span>
+            <span class="stat-label">Crops compared on identical measures</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">7</span>
+            <span class="stat-label">North-West states covered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">4</span>
+            <span class="stat-label">Figures per crop: price, yield, cost, return</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">2024</span>
+            <span class="stat-label">NAERLS wet-season survey, July 2024 prices</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROBLEM ================= -->
+    <section class="section section-paper">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The problem</p>
+          <h2>The choice is made once a year, and usually blind.</h2>
+          <p>
+            A smallholder farmer in the North-West picks a crop in May and finds out
+            in October whether it was the right call. By then the land, the seed and
+            the season are spent.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card card-hover">
+            <div class="icon-tile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Prices are heard, not known</h3>
+            <p>
+              What a crop fetched last year in one market becomes the basis for this
+              year's decision across a whole village. Nobody is comparing the actual
+              regional figures.
+            </p>
+          </article>
+
+          <article class="card card-hover">
+            <div class="icon-tile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>
+            </div>
+            <h3>Cost is left out of the sum</h3>
+            <p>
+              A crop with the best price can still be the worst choice once seed,
+              fertiliser and labour are counted. The number that matters is what is
+              left after the bill.
+            </p>
+          </article>
+
+          <article class="card card-hover">
+            <div class="icon-tile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5l3 2"/></svg>
+            </div>
+            <h3>The data exists  out of reach</h3>
+            <p>
+              NAERLS publishes yields, costs and market prices every year. It sits in
+              a PDF report, in English, in a format built for institutions rather than
+              for the person holding the hoe.
+            </p>
+          </article>
+        </div>
+
+        <div class="btn-row mt-7">
+          <a class="btn btn-outline" href="problem.html">Read the full problem</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section section-paper-2">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>Three answers in, a ranked comparison out.</h2>
+          <p>
+            No account, no waiting. The whole thing takes about a minute on a phone.
+          </p>
+        </div>
+
+        <div class="steps grid grid-3">
+          <article class="step">
+            <h3>Tell us about your farm</h3>
+            <p>
+              Your state, how much land you will plant, and what you can spend before
+              harvest. Nothing else is asked for.
+            </p>
+          </article>
+          <article class="step">
+            <h3>Pick the crops you are weighing</h3>
+            <p>
+              Choose from the eight crops covered by the survey. Compare two, or
+              compare all of them.
+            </p>
+          </article>
+          <article class="step">
+            <h3>See the numbers, ranked</h3>
+            <p>
+              Cost, expected harvest, revenue and indicative return for your exact
+              plot size  plus which options your budget actually covers.
+            </p>
+          </article>
+        </div>
+
+        <div class="btn-row mt-7">
+          <a class="btn btn-outline" href="how-it-works.html">See the method and the maths</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CROPS ================= -->
+    <section class="section section-paper">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The crops</p>
+          <h2>Eight crops, measured the same way.</h2>
+          <p>
+            Where a comparable North-West price is missing from the survey, AgroSelect
+            says so rather than filling the gap with a guess.
+          </p>
+        </div>
+
+        <div class="grid grid-4" id="crop-card-grid">
+          <!-- Rendered by js/site.js -->
+          <noscript>
+            <p><a href="crops.html">View the full crop figures</a></p>
+          </noscript>
+        </div>
+
+        <p class="table-caption mt-5">
+          Return figures are per hectare, before your own plot size is applied.
+          <a href="crops.html">See every figure and how it was worked out</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= EVIDENCE ================= -->
+    <section class="section section-paper-2">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Evidence</p>
+            <h2>One source, named, and checkable.</h2>
+            <p class="lede mt-5">
+              Every price, yield and cost on this site comes from the National
+              Agricultural Extension and Research Liaison Services survey of the 2024
+              wet season, using North-West values. Market prices are July 2024.
+            </p>
+            <p class="lede mt-4">
+              We do not model, adjust or smooth the figures. If the survey has no
+              comparable North-West price for a crop, the site prints
+              <strong>Unavailable</strong>.
+            </p>
+            <div class="btn-row mt-6">
+              <a class="btn btn-outline" href="crops.html#sources">Data &amp; sources</a>
+              <a class="btn btn-outline" href="https://naerls.gov.ng/reports/" target="_blank" rel="noopener">
+                NAERLS reports
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="claim-panel">
+
+            <div class="claim claim-is">
+              <!-- Watermark: a seedling breaking ground  the promise kept. -->
+              <svg class="claim-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21v-8"/>
+                <path d="M12 13C12 9 9 6.5 5 6.5c0 4 2.7 6.5 7 6.5Z"/>
+                <path d="M12 12c0-3.6 2.7-6 6.5-6 0 3.7-2.5 6-6.5 6Z"/>
+                <path d="M4 21h16"/>
+              </svg>
+
+              <div class="claim-head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <p class="claim-label">What this is</p>
+              </div>
+              <p class="claim-text">
+                A <b>like-for-like comparison</b> of published figures  scaled to your
+                plot and checked against your budget.
+              </p>
+            </div>
+
+            <div class="claim claim-isnt">
+              <!-- Watermark: cloud and rain  everything the figures cannot see. -->
+              <svg class="claim-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.5 15a4 4 0 0 0-.6-7.96 6 6 0 0 0-11.4 1.8A3.6 3.6 0 0 0 6 15Z"/>
+                <path d="M8 18.5 7 21M12 18.5 11 21M16 18.5 15 21"/>
+              </svg>
+
+              <div class="claim-head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+                <p class="claim-label">What this is not</p>
+              </div>
+              <p class="claim-text">
+                <b>A promise.</b> Weather, pests, market swings and your own soil will all
+                move the result. These are indicative estimates, not guaranteed profits.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-band">
+      <div class="wrap">
+        <p class="eyebrow">Ready when you are</p>
+        <h2>Put your own numbers in.</h2>
+        <p>
+          Your state, your hectares, your budget. You will have the comparison
+          in front of you in about a minute.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="get-started.html">
+            Compare my crops
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost-light btn-lg" href="crops.html">Browse the crop data</a>
+        </div>
+      </div>
     </section>
 
   </main>
 
-
-  <!-- FOOTER -->
   <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+               width="99" height="30" alt="AgroSelect">
+          <p>Choose better. Farm smarter. Crop comparison for smallholder farmers
+             in North-West Nigeria, built on published survey data.</p>
+        </div>
 
-    <div class="footer-inner">
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="get-started.html">Compare my crops</a></li>
+            <li><a href="crops.html">Crop figures</a></li>
+            <li><a href="how-it-works.html">How it works</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-brand">
-        <span class="footer-wordmark">
-          <span>Agro</span>Select
-        </span>
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="problem.html">The problem</a></li>
+            <li><a href="crops.html#sources">Data &amp; sources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
 
-        <p>Choose Better. Farm Smarter.</p>
+        <div class="footer-col">
+          <h3>Region</h3>
+          <ul>
+            <li>Jigawa &middot; Kaduna</li>
+            <li>Kano &middot; Katsina</li>
+            <li>Kebbi &middot; Sokoto</li>
+            <li>Zamfara</li>
+          </ul>
+        </div>
       </div>
 
-      <p class="footer-location">
-        North-West Nigeria
-      </p>
-
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AgroSelect. Figures are indicative estimates for
+           planning and comparison, not a guarantee of farm returns.</p>
+        <p>North-West Nigeria</p>
+      </div>
     </div>
-
   </footer>
-
+  <script src="js/crops.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

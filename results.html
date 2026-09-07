@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C110D">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/agroselect.css">
+  <title>Your crop comparison | AgroSelect</title>
+  <meta name="description" content="Your crops ranked by indicative return for your own plot size and budget, using published North-West Nigeria survey figures.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://agroselect.ng/results.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgroSelect">
+  <meta property="og:title" content="Your crop comparison | AgroSelect">
+  <meta property="og:description" content="Your crops ranked by indicative return for your own plot size and budget.">
+  <meta property="og:url" content="https://agroselect.ng/results.html">
+  <meta property="og:image" content="https://agroselect.ng/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your crop comparison | AgroSelect">
+  <meta name="twitter:description" content="Your crops ranked by indicative return for your own plot size and budget.">
+  <meta name="twitter:image" content="https://agroselect.ng/assets/og-image.jpg">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand-logo" href="index.html" aria-label="AgroSelect  home">
+        <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+             width="99" height="30" alt="AgroSelect">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu"><span></span></button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="problem.html">The Problem</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="get-started.html" aria-current="page">Get started</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm header-cta" href="get-started.html" aria-current="page">Get started</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="print-only print-brand" aria-hidden="true">
+      <img src="assets/logo-light.png" srcset="assets/logo-light.png 1x, assets/logo-light@2x.png 2x"
+           width="99" height="30" alt="">
+    </div>
+
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="get-started.html">Compare my crops</a>
+          <span aria-hidden="true">/</span>
+          <span>Your comparison</span>
+        </nav>
+        <h1>Your crop comparison.</h1>
+        <p>
+          The same published figures for every crop, scaled to the land you entered
+          and checked against the budget you have.
+        </p>
+      </div>
+    </section>
+
+    <!-- Shown when someone lands here without filling the form. -->
+    <section class="section section-paper" id="results-empty" hidden>
+      <div class="wrap-narrow">
+        <div class="empty-state">
+          <h2>We don't have your farm details yet</h2>
+          <p>
+            This page builds a comparison from the answers you give on the previous
+            step. Those answers live in this browser tab only, so if you closed the
+            tab or arrived here directly, there is nothing to compare yet.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary btn-lg" href="get-started.html">Answer the questions</a>
+            <a class="btn btn-outline btn-lg" href="crops.html">Browse all crop figures</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="results-root" hidden>
+
+      <!-- ================= SUMMARY + WINNER ================= -->
+      <section class="section-tight section-paper">
+        <div class="wrap">
+          <dl class="result-summary" id="result-context"></dl>
+
+          <div class="winner-card" id="result-winner"></div>
+
+          <div class="notice notice-plain" id="result-soil" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22h20"/><path d="M4 22V10l8-6 8 6v12"/></svg>
+            <div>
+              <strong>Your soil notes:</strong>
+              <span id="result-soil-text"></span>
+              Soil is not part of the survey figures, so it does not change the numbers 
+              but weigh it yourself before you commit the land.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TABLE ================= -->
+      <section class="section-tight section-paper">
+        <div class="wrap">
+          <div class="section-head mb-5">
+            <p class="eyebrow">Side by side</p>
+            <h2>Every crop you picked, on the same measures.</h2>
+          </div>
+
+          <div class="table-scroll">
+            <table class="data data-compact">
+              <caption class="visually-hidden">
+                Your selected crops ranked by indicative return for your plot size,
+                showing expected harvest, production cost, revenue, return, return per
+                naira spent, and whether the cost fits your budget.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Crop</th>
+                  <th scope="col">Harvest</th>
+                  <th scope="col">Cost</th>
+                  <th scope="col">Revenue</th>
+                  <th scope="col">Return</th>
+                  <th scope="col">Per ₦1</th>
+                  <th scope="col">Budget</th>
+                </tr>
+              </thead>
+              <tbody id="result-table-body"></tbody>
+            </table>
+          </div>
+
+          <p class="table-caption">
+            All figures are for the plot size you entered. Return per ₦1 spent is
+            useful when your budget is tight: it shows which crop works your money
+            hardest, regardless of the total.
+          </p>
+
+          <div class="btn-row mt-6">
+            <a class="btn btn-primary" href="get-started.html">Change my answers</a>
+            <button class="btn btn-outline" type="button" id="print-results">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+              Print or save as PDF
+            </button>
+            <a class="btn btn-outline" href="crops.html">See how each figure was worked out</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PER-CROP NOTES ================= -->
+      <section class="section section-paper-2">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Before you decide</p>
+            <h2>What the numbers don't tell you.</h2>
+            <p>
+              Timing, risk and water are the things that turn an indicative return into
+              a real one. Read these against your own land.
+            </p>
+          </div>
+
+          <div class="detail-grid" id="result-notes"></div>
+
+          <div class="notice mt-6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+            <div>
+              <strong>Important:</strong> these are indicative estimates built from the
+              NAERLS 2024 wet-season survey and July 2024 North-West market prices, scaled
+              to the plot size you entered. They are not guaranteed farm profits. Prices
+              move, rains fail, pests arrive, and your soil is your own. Treat this as one
+              input into your decision, alongside your extension officer and your own
+              knowledge of your land.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Weighing a different plot or budget?</h2>
+        <p>Change your answers and the whole comparison is rebuilt around them.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="get-started.html">Run it again</a>
+          <a class="btn btn-ghost-light btn-lg" href="contact.html">Ask us a question</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-dark.png" srcset="assets/logo-dark.png 1x, assets/logo-dark@2x.png 2x"
+               width="99" height="30" alt="AgroSelect">
+          <p>Choose better. Farm smarter. Crop comparison for smallholder farmers
+             in North-West Nigeria, built on published survey data.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="get-started.html">Compare my crops</a></li>
+            <li><a href="crops.html">Crop figures</a></li>
+            <li><a href="how-it-works.html">How it works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="problem.html">The problem</a></li>
+            <li><a href="crops.html#sources">Data &amp; sources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Region</h3>
+          <ul>
+            <li>Jigawa &middot; Kaduna</li>
+            <li>Kano &middot; Katsina</li>
+            <li>Kebbi &middot; Sokoto</li>
+            <li>Zamfara</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AgroSelect. Figures are indicative estimates for
+           planning and comparison, not a guarantee of farm returns.</p>
+        <p>North-West Nigeria</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/crops.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
